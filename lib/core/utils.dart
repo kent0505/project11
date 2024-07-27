@@ -1,22 +1,33 @@
 import 'dart:developer';
 
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'models/my_model.dart';
 
-bool onboard = true;
+String firstName = 'User';
+String lastName = '';
+String imagePath = '';
 
 // SHARED PREFS
 Future<void> getData() async {
   final prefs = await SharedPreferences.getInstance();
-  // await prefs.remove('onboard');
-  onboard = prefs.getBool('onboard') ?? true;
+  firstName = prefs.getString('firstName') ?? 'User';
+  lastName = prefs.getString('lastName') ?? '';
+  imagePath = prefs.getString('imagePath') ?? '';
 }
 
-Future<void> saveData() async {
+Future<void> saveName(String firstName, String lastName) async {
   final prefs = await SharedPreferences.getInstance();
-  prefs.setBool('onboard', false);
+  prefs.setString('firstName', firstName);
+  prefs.setString('lastName', lastName);
+}
+
+Future<void> saveImage(String path) async {
+  final prefs = await SharedPreferences.getInstance();
+  prefs.setString('imagePath', path);
+  imagePath = path;
 }
 
 // HIVE
@@ -39,4 +50,15 @@ Future<List<MyModel>> updateModels() async {
 
 int getCurrentTimestamp() {
   return DateTime.now().millisecondsSinceEpoch ~/ 1000;
+}
+
+Future<XFile> pickImage() async {
+  try {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (image == null) return XFile('');
+    return image;
+  } catch (e) {
+    print(e);
+    return XFile('');
+  }
 }

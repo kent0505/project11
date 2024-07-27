@@ -6,33 +6,19 @@ class ArrowBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 46,
-      margin: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+    return SizedBox(
+      height: 44,
+      width: 48,
       child: CupertinoButton(
         onPressed: () {
           Navigator.pop(context);
         },
         padding: EdgeInsets.zero,
-        child: const Row(
-          children: [
-            SizedBox(width: 15),
-            Icon(
-              Icons.arrow_back_ios_rounded,
-              color: Colors.white,
-            ),
-            SizedBox(width: 5),
-            Text(
-              'Back',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'SFProText',
-              ),
-            ),
-            SizedBox(width: 5),
-          ],
+        child: const Center(
+          child: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.black,
+          ),
         ),
       ),
     );

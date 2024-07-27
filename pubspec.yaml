@@ -16,6 +16,7 @@ dependencies:
   intl: ^0.19.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  image_picker: ^1.1.2
   ###
 dev_dependencies:
   flutter_test:
@@ -27,10 +28,10 @@ flutter:
     - assets/
     - assets/fonts/
   fonts:
-    - family: SF
+    - family: SFR
       fonts:
         - asset: assets/fonts/SFProText-Regular.ttf
-    - family: SFM
+    - family: SF
       fonts:
         - asset: assets/fonts/SFProText-Medium.ttf
     - family: SFB
