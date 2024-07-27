@@ -1,0 +1,131 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../core/models/operation.dart';
+import '../../../core/widgets/dialogs/delete_dialog.dart';
+
+class OperationCard extends StatelessWidget {
+  const OperationCard({super.key, required this.operation});
+
+  final Operation operation;
+
+  @override
+  Widget build(BuildContext context) {
+    return Slidable(
+      endActionPane: ActionPane(
+        extentRatio: 0.2,
+        motion: const ScrollMotion(),
+        children: [
+          Container(
+            height: 60,
+            width: 74,
+            margin: const EdgeInsets.only(bottom: 8),
+            decoration: BoxDecoration(
+              color: const Color(0xffFF3B30),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: CupertinoButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return DeleteDialog(
+                      title: 'Delete?',
+                      onYes: () {},
+                    );
+                  },
+                );
+              },
+              padding: EdgeInsets.zero,
+              child: Center(
+                child: SvgPicture.asset('assets/delete.svg'),
+              ),
+            ),
+          ),
+        ],
+      ),
+      child: Container(
+        height: 60,
+        margin: const EdgeInsets.only(bottom: 8),
+        decoration: const BoxDecoration(
+          color: Color(0xff1C1C1E),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10),
+            bottomLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomRight: Radius.circular(10),
+          ),
+        ),
+        child: CupertinoButton(
+          onPressed: () {
+            context.push('/edit', extra: operation);
+          },
+          padding: EdgeInsets.zero,
+          child: Row(
+            children: [
+              const SizedBox(width: 8),
+              Container(
+                height: 42,
+                width: 42,
+                decoration: BoxDecoration(
+                  color: const Color(0xffFF9F0A).withOpacity(0.14),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: SvgPicture.asset('assets/icon${operation.iconID}.svg'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: SizedBox(
+                  height: 40,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        operation.name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontFamily: 'SF',
+                        ),
+                      ),
+                      Text(
+                        operation.income ? 'Income' : 'Expense',
+                        style: TextStyle(
+                          color: const Color(0xffEBEBF5).withOpacity(0.6),
+                          fontSize: 15,
+                          fontFamily: 'SF',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                operation.income
+                    ? '+${operation.amount}'
+                    : '-\$${operation.amount}',
+                style: TextStyle(
+                  color: operation.income
+                      ? const Color(0xff34C759)
+                      : const Color(0xffFF3B30),
+                  fontSize: 15,
+                  fontFamily: 'SF',
+                ),
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

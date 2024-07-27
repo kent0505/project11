@@ -22,7 +22,7 @@ class DeleteDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: const Color(0xff6047a7),
+      backgroundColor: const Color(0xff1C1C1E),
       child: SizedBox(
         height: height,
         width: MediaQuery.of(context).size.width > 300 ? 300 : null,

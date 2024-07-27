@@ -92,7 +92,7 @@ class _ProfileTile extends StatelessWidget {
       child: CupertinoButton(
         onPressed: () {
           if (asset == 'profile1') {
-            context.push('/myprofile');
+            context.push('/profile');
           }
         },
         padding: EdgeInsets.zero,

@@ -4,14 +4,14 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'core/config/router.dart';
 import 'core/config/themes.dart';
-import 'core/models/my_model.dart';
+import 'core/models/operation.dart';
 import 'features/home/bloc/home_bloc.dart';
 import 'features/settings/bloc/settings_bloc.dart';
 
 void main() async {
   await Hive.initFlutter();
-  // await Hive.deleteBoxFromDisk('mymodelbox');
-  Hive.registerAdapter(MyModelAdapter());
+  // await Hive.deleteBoxFromDisk('operationbox');
+  Hive.registerAdapter(OperationAdapter());
   runApp(const MyApp());
 }
 

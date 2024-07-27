@@ -4,7 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'models/my_model.dart';
+import 'models/operation.dart';
 
 String firstName = 'User';
 String lastName = '';
@@ -44,21 +44,21 @@ Future<void> saveMoney(int amount, bool income) async {
 }
 
 // HIVE
-List<MyModel> mymodels = [];
+List<Operation> operationsList = [];
 
-Future<List<MyModel>> getModels() async {
-  final box = await Hive.openBox('mymodelbox');
-  List data = box.get('mymodels') ?? [];
-  mymodels = data.cast<MyModel>();
-  log(mymodels.length.toString());
-  return mymodels;
+Future<List<Operation>> getModels() async {
+  final box = await Hive.openBox('operationbox');
+  List data = box.get('operationsList') ?? [];
+  operationsList = data.cast<Operation>();
+  log(operationsList.length.toString());
+  return operationsList;
 }
 
-Future<List<MyModel>> updateModels() async {
-  final box = await Hive.openBox('mymodelbox');
-  box.put('mymodels', mymodels);
-  mymodels = await box.get('mymodels');
-  return mymodels;
+Future<List<Operation>> updateModels() async {
+  final box = await Hive.openBox('operationbox');
+  box.put('operationsList', operationsList);
+  operationsList = await box.get('operationsList');
+  return operationsList;
 }
 
 int getCurrentTimestamp() {
@@ -74,4 +74,24 @@ Future<XFile> pickImage() async {
     print(e);
     return XFile('');
   }
+}
+
+List<Operation> getList(int index) {
+  print('GET LIST');
+  List<Operation> incomes = [];
+  List<Operation> expenses = [];
+  if (index == 0) return operationsTestList;
+  if (index == 1) {
+    for (Operation operation in operationsTestList) {
+      if (operation.income) incomes.add(operation);
+    }
+    return incomes;
+  }
+  if (index == 2) {
+    for (Operation operation in operationsTestList) {
+      if (!operation.income) expenses.add(operation);
+    }
+    return expenses;
+  }
+  return [];
 }

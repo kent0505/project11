@@ -45,7 +45,7 @@ class BalanceCard extends StatelessWidget {
               const Spacer(),
               CupertinoButton(
                 onPressed: () {
-                  context.push('/add-operation');
+                  context.push('/add');
                 },
                 padding: EdgeInsets.zero,
                 minSize: 44,
