@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../config/app_colors.dart';
 import 'buttons/arrow_back_button.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -18,7 +19,7 @@ class CustomAppbar extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: Colors.black,
+              color: AppColors.black,
               fontSize: 19,
               fontFamily: 'SFB',
             ),

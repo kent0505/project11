@@ -31,7 +31,7 @@ class PrimaryButton extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: active ? Colors.white : Colors.white.withOpacity(0.3),
+              color: active ? AppColors.text : Colors.white.withOpacity(0.3),
               fontSize: 16,
               fontFamily: 'SF',
             ),

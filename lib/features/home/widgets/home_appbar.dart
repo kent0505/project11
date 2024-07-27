@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/config/app_colors.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/profile_image.dart';
 
@@ -17,7 +18,7 @@ class HomeAppbar extends StatelessWidget {
           Text(
             '$firstName $lastName',
             style: const TextStyle(
-              color: Colors.black,
+              color: AppColors.black,
               fontSize: 17,
               fontFamily: 'SFB',
             ),

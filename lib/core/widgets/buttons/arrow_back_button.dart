@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../config/app_colors.dart';
+
 class ArrowBackButton extends StatelessWidget {
   const ArrowBackButton({super.key});
 
@@ -17,7 +19,7 @@ class ArrowBackButton extends StatelessWidget {
         child: const Center(
           child: Icon(
             Icons.arrow_back_ios_rounded,
-            color: Colors.black,
+            color: AppColors.black,
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:ui';
 
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
@@ -8,6 +9,7 @@ import 'models/operation.dart';
 
 String firstName = 'User';
 String lastName = '';
+bool genderMale = true;
 String imagePath = '';
 int myIncomes = 0;
 int myExpenses = 0;
@@ -17,30 +19,24 @@ Future<void> getData() async {
   final prefs = await SharedPreferences.getInstance();
   firstName = prefs.getString('firstName') ?? 'User';
   lastName = prefs.getString('lastName') ?? '';
+  genderMale = prefs.getBool('genderMale') ?? true;
   imagePath = prefs.getString('imagePath') ?? '';
-  myIncomes = prefs.getInt('myIncomes') ?? 0;
-  myExpenses = prefs.getInt('myExpenses') ?? 0;
 }
 
-Future<void> saveName(String firstName, String lastName) async {
+Future<void> saveUser(String name, String surname, bool male) async {
   final prefs = await SharedPreferences.getInstance();
-  prefs.setString('firstName', firstName);
-  prefs.setString('lastName', lastName);
+  prefs.setString('firstName', name);
+  prefs.setString('lastName', surname);
+  prefs.setBool('genderMale', male);
+  firstName = name;
+  lastName = surname;
+  genderMale = male;
 }
 
 Future<void> saveImage(String path) async {
   final prefs = await SharedPreferences.getInstance();
   prefs.setString('imagePath', path);
   imagePath = path;
-}
-
-Future<void> saveMoney(int amount, bool income) async {
-  final prefs = await SharedPreferences.getInstance();
-  if (income) {
-    prefs.setInt('myIncomes', amount);
-  } else {
-    prefs.setInt('myExpenses', amount);
-  }
 }
 
 // HIVE
@@ -51,6 +47,7 @@ Future<List<Operation>> getModels() async {
   List data = box.get('operationsList') ?? [];
   operationsList = data.cast<Operation>();
   log(operationsList.length.toString());
+  getBalance();
   return operationsList;
 }
 
@@ -58,11 +55,26 @@ Future<List<Operation>> updateModels() async {
   final box = await Hive.openBox('operationbox');
   box.put('operationsList', operationsList);
   operationsList = await box.get('operationsList');
+  getBalance();
   return operationsList;
 }
 
 int getCurrentTimestamp() {
   return DateTime.now().millisecondsSinceEpoch ~/ 1000;
+}
+
+void getBalance() {
+  int incomes = 0;
+  int expenses = 0;
+  for (Operation operation in operationsList) {
+    if (operation.income) {
+      incomes = incomes + operation.amount;
+    } else {
+      expenses = expenses + operation.amount;
+    }
+  }
+  myIncomes = incomes;
+  myExpenses = expenses;
 }
 
 Future<XFile> pickImage() async {
@@ -71,13 +83,13 @@ Future<XFile> pickImage() async {
     if (image == null) return XFile('');
     return image;
   } catch (e) {
-    print(e);
+    log(e.toString());
     return XFile('');
   }
 }
 
 List<Operation> getList(int index) {
-  print('GET LIST');
+  log('GET LIST');
   List<Operation> incomes = [];
   List<Operation> expenses = [];
   if (index == 0) return operationsList;
@@ -94,4 +106,16 @@ List<Operation> getList(int index) {
     return expenses;
   }
   return [];
+}
+
+Color invertColor(Color color) {
+  int invertedRed = 255 - color.red;
+  int invertedGreen = 255 - color.green;
+  int invertedBlue = 255 - color.blue;
+  return Color.fromARGB(
+    color.alpha,
+    invertedRed,
+    invertedGreen,
+    invertedBlue,
+  );
 }

@@ -34,7 +34,7 @@ class DeleteDialog extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                color: Colors.white,
+                color: AppColors.text,
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
@@ -89,7 +89,7 @@ class _Button extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: Colors.white,
+              color: AppColors.grey,
               fontSize: 14,
               fontWeight: FontWeight.w600,
               fontFamily: 'SF',

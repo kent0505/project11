@@ -42,7 +42,7 @@ class TxtField extends StatelessWidget {
         ],
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(
-          color: Colors.white,
+          color: AppColors.text,
           fontSize: 17,
           fontWeight: FontWeight.w500,
           fontFamily: 'SF',
@@ -50,7 +50,7 @@ class TxtField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
-            color: const Color(0xffEBEBF5).withOpacity(0.3),
+            color: AppColors.border,
             fontSize: 17,
             fontWeight: FontWeight.w500,
             fontFamily: 'SF',

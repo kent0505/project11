@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/config/app_colors.dart';
+
 class UppercaseText extends StatelessWidget {
   const UppercaseText(this.title, {super.key});
 
@@ -12,9 +14,8 @@ class UppercaseText extends StatelessWidget {
         const SizedBox(width: 16),
         Text(
           title,
-          style: TextStyle(
-            // color: const Color(0xffEBEBF5).withOpacity(0.6),
-            color: Colors.grey[700],
+          style: const TextStyle(
+            color: AppColors.grey,
             fontSize: 13,
           ),
         ),

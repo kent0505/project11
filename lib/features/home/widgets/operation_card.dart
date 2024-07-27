@@ -78,7 +78,7 @@ class OperationCard extends StatelessWidget {
                 height: 42,
                 width: 42,
                 decoration: BoxDecoration(
-                  color: const Color(0xffFF9F0A).withOpacity(0.14),
+                  color: AppColors.yellow14,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
@@ -98,15 +98,15 @@ class OperationCard extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: AppColors.text,
                           fontSize: 17,
                           fontFamily: 'SF',
                         ),
                       ),
                       Text(
                         operation.income ? 'Income' : 'Expense',
-                        style: TextStyle(
-                          color: const Color(0xffEBEBF5).withOpacity(0.6),
+                        style: const TextStyle(
+                          color: AppColors.grey,
                           fontSize: 15,
                           fontFamily: 'SF',
                         ),

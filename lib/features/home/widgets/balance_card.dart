@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/utils.dart';
+import '../../operation/bloc/operation_bloc.dart';
 
 class BalanceCard extends StatelessWidget {
   const BalanceCard({super.key});
@@ -32,13 +34,17 @@ class BalanceCard extends StatelessWidget {
                       fontSize: 15,
                     ),
                   ),
-                  Text(
-                    '\$${myIncomes - myExpenses}',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 31,
-                      fontFamily: 'SFB',
-                    ),
+                  BlocBuilder<OperationBloc, OperationState>(
+                    builder: (context, state) {
+                      return Text(
+                        '\$${myIncomes - myExpenses}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 31,
+                          fontFamily: 'SFB',
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -125,17 +131,21 @@ class _IncomeCard extends StatelessWidget {
                       color: const Color(0xffEBEBF5).withOpacity(0.6),
                     ),
                   ),
-                  Expanded(
-                    child: Text(
-                      income ? '\$$myIncomes' : '\$$myExpenses',
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 19,
-                        fontFamily: 'SFB',
-                      ),
-                    ),
+                  BlocBuilder<OperationBloc, OperationState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: Text(
+                          income ? '\$$myIncomes' : '\$$myExpenses',
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 19,
+                            fontFamily: 'SFB',
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

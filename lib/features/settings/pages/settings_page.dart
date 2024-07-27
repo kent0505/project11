@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/config/app_colors.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/profile_image.dart';
 
@@ -62,7 +63,7 @@ class _UserName extends StatelessWidget {
     return Text(
       '$firstName $lastName',
       style: const TextStyle(
-        color: Colors.black,
+        color: AppColors.black,
         fontSize: 21,
         fontWeight: FontWeight.w600,
         fontFamily: 'SFB',
@@ -85,8 +86,7 @@ class _ProfileTile extends StatelessWidget {
     return Container(
       height: 48,
       decoration: BoxDecoration(
-        // color: const Color(0xff1C1C1E),
-        color: const Color(0xffF2F2F7), // Light mode background color
+        color: AppColors.card,
         borderRadius: BorderRadius.circular(10),
       ),
       child: CupertinoButton(
@@ -104,17 +104,15 @@ class _ProfileTile extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                // color: Colors.white,
-                color: Colors.black,
+                color: AppColors.text,
                 fontSize: 15,
                 fontFamily: 'SF',
               ),
             ),
             const Spacer(),
-            Icon(
+            const Icon(
               Icons.chevron_right_rounded,
-              // color: const Color(0xffEBEBF5).withOpacity(0.6),
-              color: const Color(0xff1C1C1E).withOpacity(0.6),
+              color: AppColors.grey,
             ),
             const SizedBox(width: 16),
           ],
@@ -141,8 +139,7 @@ class _ProfileTile2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        // color: const Color(0xff1C1C1E),
-        color: const Color(0xffF2F2F7), // Light mode background color
+        color: AppColors.card,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -159,17 +156,15 @@ class _ProfileTile2 extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    // color: Colors.white,
-                    color: Colors.black,
+                    color: AppColors.text,
                     fontSize: 15,
                     fontFamily: 'SF',
                   ),
                 ),
                 const Spacer(),
-                Icon(
+                const Icon(
                   Icons.chevron_right_rounded,
-                  // color: const Color(0xffEBEBF5).withOpacity(0.6),
-                  color: const Color(0xff1C1C1E).withOpacity(0.6),
+                  color: AppColors.grey,
                 ),
                 const SizedBox(width: 16),
               ],
@@ -178,7 +173,7 @@ class _ProfileTile2 extends StatelessWidget {
           Container(
             height: 0.5,
             margin: const EdgeInsets.only(left: 48),
-            color: const Color(0xff1C1C1E).withOpacity(0.6),
+            color: AppColors.border,
           ),
           CupertinoButton(
             onPressed: () {},
@@ -192,17 +187,15 @@ class _ProfileTile2 extends StatelessWidget {
                 Text(
                   title2,
                   style: const TextStyle(
-                    // color: Colors.white,
-                    color: Colors.black,
+                    color: AppColors.text,
                     fontSize: 15,
                     fontFamily: 'SF',
                   ),
                 ),
                 const Spacer(),
-                Icon(
+                const Icon(
                   Icons.chevron_right_rounded,
-                  // color: const Color(0xffEBEBF5).withOpacity(0.6),
-                  color: const Color(0xff1C1C1E).withOpacity(0.6),
+                  color: AppColors.grey,
                 ),
                 const SizedBox(width: 16),
               ],

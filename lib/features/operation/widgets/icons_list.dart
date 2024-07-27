@@ -125,7 +125,7 @@ class _Button extends StatelessWidget {
         height: 42,
         width: 42,
         decoration: BoxDecoration(
-          color: const Color(0xffFF9F0A).withOpacity(0.14),
+          color: AppColors.yellow14,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: selected ? AppColors.yellow : Colors.transparent,

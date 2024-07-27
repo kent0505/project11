@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:project11/features/operation/widgets/delete_button.dart';
 
 import '../../../core/models/operation.dart';
 import '../../../core/widgets/buttons/primary_button.dart';
@@ -11,6 +9,7 @@ import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/dialogs/delete_dialog.dart';
 import '../../../core/widgets/textfields/txt_field.dart';
 import '../bloc/operation_bloc.dart';
+import '../widgets/delete_button.dart';
 import '../widgets/icons_list.dart';
 import '../widgets/operation_field.dart';
 import '../widgets/uppercase_text.dart';
