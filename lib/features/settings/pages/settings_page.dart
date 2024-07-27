@@ -1,13 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/utils.dart';
-import '../bloc/settings_bloc.dart';
+import '../../../core/widgets/profile_image.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -19,7 +16,7 @@ class SettingsPage extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 44),
-          _ProfilePhoto(),
+          ProfileImage(height: 96),
           SizedBox(height: 16),
           _UserName(),
           SizedBox(height: 24),
@@ -53,43 +50,6 @@ class SettingsPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _ProfilePhoto extends StatelessWidget {
-  const _ProfilePhoto();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SettingsBloc, SettingsState>(
-      builder: (context, state) {
-        String path = imagePath;
-
-        if (state is ProfileImagePickedState) path = state.path;
-
-        return Center(
-          child: Container(
-            height: 96,
-            width: 96,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(48),
-            ),
-            child: path.isNotEmpty
-                ? ClipRRect(
-                    borderRadius: BorderRadius.circular(48),
-                    child: Image.file(
-                      File(path),
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return SvgPicture.asset('assets/profile_photo.svg');
-                      },
-                    ),
-                  )
-                : SvgPicture.asset('assets/profile_photo.svg'),
-          ),
-        );
-      },
     );
   }
 }
