@@ -9,6 +9,8 @@ import 'models/my_model.dart';
 String firstName = 'User';
 String lastName = '';
 String imagePath = '';
+int myIncomes = 0;
+int myExpenses = 0;
 
 // SHARED PREFS
 Future<void> getData() async {
@@ -16,6 +18,8 @@ Future<void> getData() async {
   firstName = prefs.getString('firstName') ?? 'User';
   lastName = prefs.getString('lastName') ?? '';
   imagePath = prefs.getString('imagePath') ?? '';
+  myIncomes = prefs.getInt('myIncomes') ?? 0;
+  myExpenses = prefs.getInt('myExpenses') ?? 0;
 }
 
 Future<void> saveName(String firstName, String lastName) async {
@@ -28,6 +32,15 @@ Future<void> saveImage(String path) async {
   final prefs = await SharedPreferences.getInstance();
   prefs.setString('imagePath', path);
   imagePath = path;
+}
+
+Future<void> saveMoney(int amount, bool income) async {
+  final prefs = await SharedPreferences.getInstance();
+  if (income) {
+    prefs.setInt('myIncomes', amount);
+  } else {
+    prefs.setInt('myExpenses', amount);
+  }
 }
 
 // HIVE

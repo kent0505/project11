@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../settings/pages/settings_page.dart';
 import '../bloc/home_bloc.dart';
+import '../widgets/balance_card.dart';
 import '../widgets/home_appbar.dart';
 import '../widgets/nav_bar.dart';
 
@@ -40,10 +41,15 @@ class _Home extends StatefulWidget {
 class _HomeState extends State<_Home> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        HomeAppbar(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          HomeAppbar(),
+          SizedBox(height: 16),
+          BalanceCard(),
+        ],
+      ),
     );
   }
 }

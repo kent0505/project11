@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'buttons/arrow_back_button.dart';
 
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.title});
+  const CustomAppbar(this.title, {super.key});
 
   final String title;
 

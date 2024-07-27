@@ -25,7 +25,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
     return CustomScaffold(
       body: Column(
         children: [
-          const CustomAppbar(title: 'My Profile'),
+          const CustomAppbar('My Profile'),
           const SizedBox(height: 24),
           const ProfileImage(height: 96),
           const SizedBox(height: 16),

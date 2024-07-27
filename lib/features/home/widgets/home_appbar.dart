@@ -12,7 +12,6 @@ class HomeAppbar extends StatelessWidget {
       height: 44,
       child: Row(
         children: [
-          const SizedBox(width: 16),
           const ProfileImage(height: 32),
           const SizedBox(width: 8),
           Text(
