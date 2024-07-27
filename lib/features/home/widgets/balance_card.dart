@@ -27,10 +27,10 @@ class BalanceCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Your Balance',
                     style: TextStyle(
-                      color: const Color(0xffEBEBF5).withOpacity(0.6),
+                      color: AppColors.grey,
                       fontSize: 15,
                     ),
                   ),
@@ -39,7 +39,7 @@ class BalanceCard extends StatelessWidget {
                       return Text(
                         '\$${myIncomes - myExpenses}',
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: AppColors.text,
                           fontSize: 31,
                           fontFamily: 'SFB',
                         ),
@@ -59,7 +59,7 @@ class BalanceCard extends StatelessWidget {
                   height: 44,
                   width: 44,
                   decoration: BoxDecoration(
-                    color: const Color(0xffEBEBF5).withOpacity(0.08),
+                    color: AppColors.grey3,
                     borderRadius: BorderRadius.circular(22),
                   ),
                   child: const Center(
@@ -97,7 +97,7 @@ class _IncomeCard extends StatelessWidget {
       child: Container(
         height: 64,
         decoration: BoxDecoration(
-          color: const Color(0xffEBEBF5).withOpacity(0.08),
+          color: AppColors.grey3,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -107,7 +107,7 @@ class _IncomeCard extends StatelessWidget {
               height: 44,
               width: 44,
               decoration: BoxDecoration(
-                color: const Color(0xffEBEBF5).withOpacity(0.08),
+                color: AppColors.grey3,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
@@ -127,8 +127,8 @@ class _IncomeCard extends StatelessWidget {
                 children: [
                   Text(
                     income ? 'Income' : 'Expense',
-                    style: TextStyle(
-                      color: const Color(0xffEBEBF5).withOpacity(0.6),
+                    style: const TextStyle(
+                      color: AppColors.grey,
                     ),
                   ),
                   BlocBuilder<OperationBloc, OperationState>(
@@ -139,7 +139,7 @@ class _IncomeCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: AppColors.text,
                             fontSize: 19,
                             fontFamily: 'SFB',
                           ),
