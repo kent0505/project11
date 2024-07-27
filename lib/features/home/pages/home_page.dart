@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/models/operation.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/custom_scaffold.dart';
+import '../../operation/bloc/operation_bloc.dart';
 import '../../settings/pages/settings_page.dart';
 import '../bloc/home_bloc.dart';
 import '../widgets/balance_card.dart';
@@ -78,21 +79,37 @@ class _HomeState extends State<_Home> {
             ],
           ),
         ),
-        Expanded(
-          child: ListView(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-            children: [
-              ...List.generate(
-                operations.length,
-                (index) {
-                  return OperationCard(operation: operations[index]);
-                },
-              ),
-            ],
-          ),
+        BlocBuilder<OperationBloc, OperationState>(
+          builder: (context, state) {
+            if (state is OperationsLoadedState) {
+              if (state.operations.isEmpty) {
+                return const Expanded(
+                  child: Center(
+                    child: Text('No operations!'),
+                  ),
+                );
+              }
+
+              return Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                  children: [
+                    ...List.generate(
+                      operations.length,
+                      (index) {
+                        return OperationCard(operation: operations[index]);
+                      },
+                    ),
+                  ],
+                ),
+              );
+            }
+
+            return Container();
+          },
         ),
         const SizedBox(height: 62),
       ],

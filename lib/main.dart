@@ -6,6 +6,7 @@ import 'core/config/router.dart';
 import 'core/config/themes.dart';
 import 'core/models/operation.dart';
 import 'features/home/bloc/home_bloc.dart';
+import 'features/operation/bloc/operation_bloc.dart';
 import 'features/settings/bloc/settings_bloc.dart';
 
 void main() async {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => HomeBloc()),
         BlocProvider(create: (context) => SettingsBloc()),
+        BlocProvider(create: (context) => OperationBloc()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

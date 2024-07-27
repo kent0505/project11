@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project11/core/utils.dart';
 
+import '../../../core/utils.dart';
 import '../../../core/widgets/profile_image.dart';
 
 class HomeAppbar extends StatelessWidget {

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../config/app_colors.dart';
+
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
@@ -16,11 +18,11 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 44,
       width: MediaQuery.of(context).size.width > 400 ? 400 : null,
       decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(8),
+        color: AppColors.yellow,
+        borderRadius: BorderRadius.circular(12),
       ),
       child: CupertinoButton(
         onPressed: active ? onPressed : null,
@@ -29,9 +31,8 @@ class PrimaryButton extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: active ? Colors.white : Colors.grey,
+              color: active ? Colors.white : Colors.white.withOpacity(0.3),
               fontSize: 16,
-              fontWeight: FontWeight.w600,
               fontFamily: 'SF',
             ),
           ),

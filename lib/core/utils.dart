@@ -80,15 +80,15 @@ List<Operation> getList(int index) {
   print('GET LIST');
   List<Operation> incomes = [];
   List<Operation> expenses = [];
-  if (index == 0) return operationsTestList;
+  if (index == 0) return operationsList;
   if (index == 1) {
-    for (Operation operation in operationsTestList) {
+    for (Operation operation in operationsList) {
       if (operation.income) incomes.add(operation);
     }
     return incomes;
   }
   if (index == 2) {
-    for (Operation operation in operationsTestList) {
+    for (Operation operation in operationsList) {
       if (!operation.income) expenses.add(operation);
     }
     return expenses;

@@ -60,7 +60,7 @@ class _Button extends StatelessWidget {
     return Container(
       height: 32,
       decoration: BoxDecoration(
-        color: active ? AppColors.yellow : const Color(0xff1C1C1E),
+        color: active ? AppColors.yellow : AppColors.card,
         borderRadius: BorderRadius.circular(10),
       ),
       child: CupertinoButton(

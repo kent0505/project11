@@ -3,15 +3,15 @@ import 'package:hive_flutter/hive_flutter.dart';
 @HiveType(typeId: 0)
 class Operation {
   @HiveField(0)
-  final int id;
+  int id;
   @HiveField(1)
-  final String name;
+  String name;
   @HiveField(2)
-  final bool income;
+  bool income;
   @HiveField(3)
-  final int amount;
+  int amount;
   @HiveField(4)
-  final int iconID;
+  int iconID;
 
   Operation({
     required this.id,
@@ -46,41 +46,3 @@ class OperationAdapter extends TypeAdapter<Operation> {
     writer.write(obj.iconID);
   }
 }
-
-List<Operation> operationsTestList = [
-  Operation(
-    id: 1,
-    name: 'Aaa',
-    income: true,
-    amount: 100,
-    iconID: 1,
-  ),
-  Operation(
-    id: 2,
-    name: 'Bbb',
-    income: false,
-    amount: 80,
-    iconID: 2,
-  ),
-  Operation(
-    id: 3,
-    name: 'Ccc',
-    income: false,
-    amount: 20,
-    iconID: 3,
-  ),
-  Operation(
-    id: 4,
-    name: 'Ddd',
-    income: true,
-    amount: 10,
-    iconID: 4,
-  ),
-  Operation(
-    id: 5,
-    name: 'Eee',
-    income: false,
-    amount: 50,
-    iconID: 5,
-  ),
-];

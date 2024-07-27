@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../config/app_colors.dart';
+
 class DeleteDialog extends StatelessWidget {
   const DeleteDialog({
     super.key,
@@ -22,7 +24,7 @@ class DeleteDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: const Color(0xff1C1C1E),
+      backgroundColor: AppColors.card,
       child: SizedBox(
         height: height,
         width: MediaQuery.of(context).size.width > 300 ? 300 : null,

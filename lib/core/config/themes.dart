@@ -6,12 +6,12 @@ final theme = ThemeData(
   useMaterial3: false,
   primarySwatch: Colors.grey,
   fontFamily: 'SF',
-  // textSelectionTheme: TextSelectionThemeData(
-  //   cursorColor: AppColors.white50,
-  //   selectionColor: AppColors.white50,
-  //   selectionHandleColor: AppColors.white50,
-  // ),
+  textSelectionTheme: const TextSelectionThemeData(
+    cursorColor: AppColors.yellow,
+    selectionColor: AppColors.yellow,
+    selectionHandleColor: AppColors.yellow,
+  ),
   colorScheme: ColorScheme.fromSwatch(
-    accentColor: AppColors.navBar, // overscroll indicator color
+    accentColor: AppColors.grey, // overscroll indicator color
   ),
 );

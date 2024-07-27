@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/config/app_colors.dart';
 import '../../../core/models/operation.dart';
 import '../../../core/widgets/dialogs/delete_dialog.dart';
+import '../../operation/bloc/operation_bloc.dart';
 
 class OperationCard extends StatelessWidget {
   const OperationCard({super.key, required this.operation});
@@ -34,7 +37,11 @@ class OperationCard extends StatelessWidget {
                   builder: (context) {
                     return DeleteDialog(
                       title: 'Delete?',
-                      onYes: () {},
+                      onYes: () {
+                        context
+                            .read<OperationBloc>()
+                            .add(DeleteOperationEvent(id: operation.id));
+                      },
                     );
                   },
                 );
@@ -51,7 +58,7 @@ class OperationCard extends StatelessWidget {
         height: 60,
         margin: const EdgeInsets.only(bottom: 8),
         decoration: const BoxDecoration(
-          color: Color(0xff1C1C1E),
+          color: AppColors.card,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10),
             bottomLeft: Radius.circular(10),

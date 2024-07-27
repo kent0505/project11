@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../config/app_colors.dart';
+
 class TxtField extends StatelessWidget {
   const TxtField({
     super.key,
     required this.controller,
     this.hintText = '...',
-    this.limit = 20,
-    this.borderRadius = 8,
+    this.limit = 30,
+    this.borderRadius = 10,
     this.number = false,
     required this.onChanged,
   });
@@ -22,14 +24,14 @@ class TxtField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      margin: const EdgeInsets.only(left: 2),
+      height: 56,
       decoration: BoxDecoration(
-        color: const Color(0xffD9D9D9).withOpacity(0.24),
-        borderRadius: BorderRadius.circular(borderRadius),
+        color: AppColors.card,
+        borderRadius: BorderRadius.circular(12),
       ),
       child: TextField(
         controller: controller,
-        textAlign: TextAlign.center,
         keyboardType: number ? TextInputType.number : null,
         inputFormatters: [
           if (number) ...[
@@ -41,17 +43,17 @@ class TxtField extends StatelessWidget {
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(
           color: Colors.white,
-          // fontSize: 16,
-          // fontWeight: FontWeight.w500,
-          // fontFamily: 'SF',
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'SF',
         ),
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
-            color: const Color(0xffFFFFFF).withOpacity(0.5),
-            // fontSize: 16,
-            // fontWeight: FontWeight.w500,
-            // fontFamily: 'SF',
+            color: const Color(0xffEBEBF5).withOpacity(0.3),
+            fontSize: 17,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'SF',
           ),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.transparent),
