@@ -7,6 +7,10 @@ part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   SettingsBloc() : super(SettingsInitial()) {
+    on<ChangeProfileNameEvent>((event, emit) {
+      emit(SettingsInitial());
+    });
+
     on<PickProfileImageEvent>((event, emit) {
       emit(ProfileImagePickedState(path: imagePath));
     });

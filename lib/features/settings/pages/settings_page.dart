@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/profile_image.dart';
+import '../bloc/settings_bloc.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -60,14 +62,18 @@ class _UserName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      '$firstName $lastName',
-      style: const TextStyle(
-        color: AppColors.black,
-        fontSize: 21,
-        fontWeight: FontWeight.w600,
-        fontFamily: 'SFB',
-      ),
+    return BlocBuilder<SettingsBloc, SettingsState>(
+      builder: (context, state) {
+        return Text(
+          '$firstName $lastName',
+          style: const TextStyle(
+            color: AppColors.black,
+            fontSize: 21,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'SFB',
+          ),
+        );
+      },
     );
   }
 }

@@ -57,6 +57,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
   }
 
   void onConfirm() async {
+    context.read<SettingsBloc>().add(ChangeProfileNameEvent());
     await saveUser(
       controller1.text,
       controller2.text,
