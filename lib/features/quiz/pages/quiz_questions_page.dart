@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project11/features/quiz/widgets/question_card.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/widgets/custom_appbar.dart';
@@ -41,6 +42,7 @@ class QuizQuestionsPage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 8),
+                QuestionCard(),
               ],
             ),
           ),

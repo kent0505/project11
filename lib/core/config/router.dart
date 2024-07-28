@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:project11/features/quiz/pages/quiz_comments_page.dart';
 
 import '../../features/home/pages/home_page.dart';
 import '../../features/news/pages/news_detail_page.dart';
@@ -43,6 +44,10 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/question',
       builder: (context, state) => const QuizQuestionsPage(),
+    ),
+    GoRoute(
+      path: '/comments',
+      builder: (context, state) => const QuizCommentsPage(),
     ),
     GoRoute(
       path: '/news',
