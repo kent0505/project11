@@ -1,11 +1,14 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/pages/home_page.dart';
+import '../../features/news/pages/news_detail_page.dart';
 import '../../features/operation/pages/add_operation_page.dart';
 import '../../features/operation/pages/edit_operation_page.dart';
+import '../../features/quiz/pages/quiz_questions_page.dart';
 import '../../features/settings/pages/my_profile_page.dart';
 import '../../features/splash/onboard_page.dart';
 import '../../features/splash/splash_page.dart';
+import '../models/news.dart';
 import '../models/operation.dart';
 
 final routerConfig = GoRouter(
@@ -36,6 +39,16 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/profile',
       builder: (context, state) => const MyProfilePage(),
+    ),
+    GoRoute(
+      path: '/question',
+      builder: (context, state) => const QuizQuestionsPage(),
+    ),
+    GoRoute(
+      path: '/news',
+      builder: (context, state) => NewsDetailPage(
+        news: state.extra as News,
+      ),
     ),
   ],
 );

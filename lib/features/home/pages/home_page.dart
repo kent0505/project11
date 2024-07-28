@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/models/operation.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/custom_scaffold.dart';
+import '../../news/pages/news_page.dart';
 import '../../operation/bloc/operation_bloc.dart';
+import '../../quiz/pages/quiz_page.dart';
 import '../../settings/pages/settings_page.dart';
 import '../bloc/home_bloc.dart';
 import '../widgets/balance_card.dart';
@@ -24,8 +26,8 @@ class HomePage extends StatelessWidget {
         children: [
           BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) {
-              if (state is HomeNews) return const Text('News');
-              if (state is HomeQuiz) return const Text('Quiz');
+              if (state is HomeNews) return const NewsPage();
+              if (state is HomeQuiz) return const QuizPage();
               if (state is HomeSettings) return const SettingsPage();
               return const _Home();
             },
@@ -111,7 +113,7 @@ class _HomeState extends State<_Home> {
             return Container();
           },
         ),
-        const SizedBox(height: 62),
+        SizedBox(height: 62 + MediaQuery.of(context).viewPadding.bottom),
       ],
     );
   }

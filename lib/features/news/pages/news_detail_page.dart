@@ -1,0 +1,61 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:project11/core/config/app_colors.dart';
+
+import '../../../core/models/news.dart';
+import '../../../core/widgets/custom_appbar.dart';
+import '../../../core/widgets/custom_scaffold.dart';
+
+class NewsDetailPage extends StatelessWidget {
+  const NewsDetailPage({super.key, required this.news});
+
+  final News news;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScaffold(
+      body: Column(
+        children: [
+          const CustomAppbar('News'),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: [
+                const SizedBox(height: 16),
+                Text(
+                  news.title,
+                  style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 23,
+                    fontFamily: 'SFB',
+                  ),
+                ),
+                const SizedBox(height: 30),
+
+                // date and read time
+                const SizedBox(height: 16),
+
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: CachedNetworkImage(
+                    imageUrl: news.image,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  news.desc,
+                  style: const TextStyle(
+                    color: AppColors.black,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
