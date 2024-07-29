@@ -3,9 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/config/app_colors.dart';
+import '../../../core/models/quiz.dart';
 
 class QuestionCard extends StatelessWidget {
-  const QuestionCard({super.key});
+  const QuestionCard({super.key, required this.quiz});
+
+  final Quiz quiz;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class QuestionCard extends StatelessWidget {
       ),
       child: CupertinoButton(
         onPressed: () {
-          context.push('/comments');
+          context.push('/comments', extra: quiz);
         },
         padding: EdgeInsets.zero,
         child: Column(
@@ -36,9 +39,9 @@ class QuestionCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Text(
-                  'By James H.',
-                  style: TextStyle(
+                Text(
+                  'By ${quiz.by}',
+                  style: const TextStyle(
                     color: AppColors.grey,
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
@@ -46,9 +49,9 @@ class QuestionCard extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const Text(
-                  'May 13, 2024',
-                  style: TextStyle(
+                Text(
+                  quiz.date,
+                  style: const TextStyle(
                     color: AppColors.grey,
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
@@ -58,9 +61,9 @@ class QuestionCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            const Text(
-              'What problems or inconveniences are you experiencing when using the current version of the application?',
-              style: TextStyle(
+            Text(
+              quiz.question,
+              style: const TextStyle(
                 color: AppColors.text,
                 fontSize: 19,
                 fontFamily: 'SF',
@@ -71,7 +74,6 @@ class QuestionCard extends StatelessWidget {
               children: [
                 Container(
                   height: 40,
-                  width: 58,
                   decoration: BoxDecoration(
                     color: AppColors.grey3,
                     borderRadius: BorderRadius.circular(10),
@@ -81,15 +83,16 @@ class QuestionCard extends StatelessWidget {
                       const SizedBox(width: 8),
                       SvgPicture.asset('assets/messages.svg'),
                       const SizedBox(width: 8),
-                      const Text(
-                        '2',
-                        style: TextStyle(
+                      Text(
+                        quiz.comments.length.toString(),
+                        style: const TextStyle(
                           color: AppColors.yellow,
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'SFM',
                         ),
                       ),
+                      const SizedBox(width: 8),
                     ],
                   ),
                 ),

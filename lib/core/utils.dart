@@ -3,9 +3,11 @@ import 'dart:ui';
 
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'models/operation.dart';
+import 'models/quiz.dart';
 
 String firstName = 'User';
 String lastName = '';
@@ -59,8 +61,43 @@ Future<List<Operation>> updateModels() async {
   return operationsList;
 }
 
+List<Comment> commentsList = [];
+
+Future<List<Comment>> getComments() async {
+  final box = await Hive.openBox('commentsbox');
+  List data = box.get('commentsList') ?? commentsListModel;
+  commentsList = data.cast<Comment>();
+  log(commentsList.length.toString());
+  sortComments();
+  return commentsList;
+}
+
+Future<List<Comment>> updateComments() async {
+  final box = await Hive.openBox('commentsbox');
+  box.put('commentsList', commentsList);
+  commentsList = await box.get('commentsList');
+  sortComments();
+  return commentsList;
+}
+
+void sortComments() {
+  for (Quiz quiz in quizesListModel) {
+    quiz.comments = [];
+    for (Comment comment in commentsList) {
+      if (comment.quizID == quiz.id) {
+        quiz.comments.add(comment);
+      }
+    }
+  }
+}
+
 int getCurrentTimestamp() {
   return DateTime.now().millisecondsSinceEpoch ~/ 1000;
+}
+
+String formatDate() {
+  DateTime now = DateTime.now();
+  return DateFormat('MMMM d, yyyy').format(now);
 }
 
 void getBalance() {

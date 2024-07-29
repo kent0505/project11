@@ -1,16 +1,17 @@
 import 'package:go_router/go_router.dart';
-import 'package:project11/features/quiz/pages/quiz_comments_page.dart';
 
 import '../../features/home/pages/home_page.dart';
 import '../../features/news/pages/news_detail_page.dart';
 import '../../features/operation/pages/add_operation_page.dart';
 import '../../features/operation/pages/edit_operation_page.dart';
+import '../../features/quiz/pages/quiz_comments_page.dart';
 import '../../features/quiz/pages/quiz_questions_page.dart';
 import '../../features/settings/pages/my_profile_page.dart';
 import '../../features/splash/onboard_page.dart';
 import '../../features/splash/splash_page.dart';
 import '../models/news.dart';
 import '../models/operation.dart';
+import '../models/quiz.dart';
 
 final routerConfig = GoRouter(
   initialLocation: '/',
@@ -47,7 +48,9 @@ final routerConfig = GoRouter(
     ),
     GoRoute(
       path: '/comments',
-      builder: (context, state) => const QuizCommentsPage(),
+      builder: (context, state) => QuizCommentsPage(
+        quiz: state.extra as Quiz,
+      ),
     ),
     GoRoute(
       path: '/news',

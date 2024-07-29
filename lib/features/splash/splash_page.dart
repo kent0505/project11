@@ -17,6 +17,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   void load() async {
     context.read<OperationBloc>().add(GetOperationsEvent());
+    await getComments();
     await getData().then((value) {
       Future.delayed(const Duration(seconds: 2), () {
         context.go('/home');
