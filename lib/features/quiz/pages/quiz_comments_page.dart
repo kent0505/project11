@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/config/app_colors.dart';
@@ -9,6 +10,7 @@ import '../../../core/utils.dart';
 import '../../../core/widgets/custom_appbar.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/dialogs/delete_dialog.dart';
+import '../bloc/quiz_bloc.dart';
 import '../widgets/comment_card.dart';
 
 class QuizCommentsPage extends StatefulWidget {
@@ -34,7 +36,9 @@ class _QuizCommentsPageState extends State<QuizCommentsPage> {
         title: controller.text,
         current: true,
       ));
-      await updateComments();
+      await updateComments().then((value) {
+        context.read<QuizBloc>().add(GetQuizsEvent());
+      });
       setState(() {});
       Future.delayed(const Duration(milliseconds: 100), () {
         scrollController.jumpTo(scrollController.position.maxScrollExtent);
@@ -53,6 +57,7 @@ class _QuizCommentsPageState extends State<QuizCommentsPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
+      resize: true,
       body: Column(
         children: [
           CustomAppbar('${widget.quiz.comments.length} Comment'),
@@ -78,7 +83,9 @@ class _QuizCommentsPageState extends State<QuizCommentsPage> {
                               onYes: () async {
                                 commentsList
                                     .remove(widget.quiz.comments[index]);
-                                await updateComments();
+                                await updateComments().then((value) {
+                                  context.read<QuizBloc>().add(GetQuizsEvent());
+                                });
                                 FocusManager.instance.primaryFocus?.unfocus();
                                 setState(() {});
                               },
@@ -188,9 +195,8 @@ class _MessageField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 87,
-      color: AppColors.black,
       child: Row(
         children: [
           const SizedBox(width: 16),

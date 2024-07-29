@@ -59,7 +59,7 @@ class BalanceCard extends StatelessWidget {
                   height: 44,
                   width: 44,
                   decoration: BoxDecoration(
-                    color: AppColors.grey3,
+                    color: AppColors.grey,
                     borderRadius: BorderRadius.circular(22),
                   ),
                   child: const Center(
@@ -97,7 +97,7 @@ class _IncomeCard extends StatelessWidget {
       child: Container(
         height: 64,
         decoration: BoxDecoration(
-          color: AppColors.grey3,
+          color: AppColors.grey2,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -107,7 +107,7 @@ class _IncomeCard extends StatelessWidget {
               height: 44,
               width: 44,
               decoration: BoxDecoration(
-                color: AppColors.grey3,
+                color: AppColors.grey,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Center(

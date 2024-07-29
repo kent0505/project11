@@ -1,8 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:project11/core/config/app_colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
+import '../../../core/config/app_colors.dart';
 import '../../../core/models/news.dart';
 import '../../../core/widgets/custom_appbar.dart';
 import '../../../core/widgets/custom_scaffold.dart';
@@ -26,7 +25,7 @@ class NewsDetailPage extends StatelessWidget {
                 Text(
                   news.title,
                   style: const TextStyle(
-                    color: AppColors.black,
+                    color: AppColors.text,
                     fontSize: 23,
                     fontFamily: 'SFB',
                   ),
@@ -64,7 +63,7 @@ class NewsDetailPage extends StatelessWidget {
                 Text(
                   news.desc,
                   style: const TextStyle(
-                    color: AppColors.black,
+                    color: AppColors.text,
                     fontSize: 17,
                   ),
                 ),

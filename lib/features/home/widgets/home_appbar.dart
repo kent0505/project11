@@ -18,7 +18,7 @@ class HomeAppbar extends StatelessWidget {
           Text(
             '$firstName $lastName',
             style: const TextStyle(
-              color: AppColors.black,
+              color: AppColors.text,
               fontSize: 17,
               fontFamily: 'SFB',
             ),

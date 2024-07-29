@@ -40,7 +40,7 @@ class NewsCard extends StatelessWidget {
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                color: AppColors.black,
+                color: AppColors.text,
                 fontSize: 15,
                 fontFamily: 'SF',
               ),

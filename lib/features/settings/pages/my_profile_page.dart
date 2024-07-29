@@ -161,8 +161,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                       children: [
                         Text(
                           male ? 'Male' : 'Female',
-                          style: TextStyle(
-                            color: AppColors.border,
+                          style: const TextStyle(
+                            color: AppColors.grey,
                             fontSize: 17,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'SF',

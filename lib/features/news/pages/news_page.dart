@@ -26,7 +26,7 @@ class NewsPage extends StatelessWidget {
               Text(
                 'News',
                 style: TextStyle(
-                  color: AppColors.black,
+                  color: AppColors.text,
                   fontSize: 32,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'SFB',

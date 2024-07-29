@@ -75,7 +75,7 @@ class QuestionCard extends StatelessWidget {
                 Container(
                   height: 40,
                   decoration: BoxDecoration(
-                    color: AppColors.grey3,
+                    color: AppColors.grey,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(

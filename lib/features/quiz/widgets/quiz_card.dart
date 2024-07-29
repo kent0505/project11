@@ -109,6 +109,10 @@ class QuizCard extends StatelessWidget {
                           ),
                         ),
                       ),
+                      const Positioned(
+                        left: 88,
+                        child: Text('10 questions'),
+                      ),
                     ],
                   ),
                 ),
@@ -117,7 +121,7 @@ class QuizCard extends StatelessWidget {
                   height: 44,
                   width: 44,
                   decoration: BoxDecoration(
-                    color: AppColors.grey3,
+                    color: AppColors.grey,
                     borderRadius: BorderRadius.circular(22),
                   ),
                   child: const Center(

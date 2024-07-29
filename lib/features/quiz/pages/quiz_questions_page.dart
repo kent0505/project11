@@ -28,7 +28,7 @@ class QuizQuestionsPage extends StatelessWidget {
                     const Text(
                       'Possible improvements or modifications',
                       style: TextStyle(
-                        color: AppColors.black,
+                        color: AppColors.text,
                         fontSize: 23,
                         fontWeight: FontWeight.w700,
                         fontFamily: 'SFB',
@@ -40,7 +40,7 @@ class QuizQuestionsPage extends StatelessWidget {
                         Text(
                           '10 Questions',
                           style: TextStyle(
-                            color: AppColors.black,
+                            color: AppColors.text,
                             fontSize: 15,
                             fontFamily: 'SFM',
                           ),

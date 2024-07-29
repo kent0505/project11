@@ -19,7 +19,7 @@ class ArrowBackButton extends StatelessWidget {
         child: const Center(
           child: Icon(
             Icons.arrow_back_ios_rounded,
-            color: AppColors.black,
+            color: AppColors.text,
           ),
         ),
       ),

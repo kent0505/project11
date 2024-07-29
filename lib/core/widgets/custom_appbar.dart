@@ -19,7 +19,7 @@ class CustomAppbar extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: AppColors.black,
+              color: AppColors.text,
               fontSize: 19,
               fontFamily: 'SFB',
             ),

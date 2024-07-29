@@ -18,7 +18,7 @@ class QuizPage extends StatelessWidget {
               Text(
                 'Quiz',
                 style: TextStyle(
-                  color: AppColors.black,
+                  color: AppColors.text,
                   fontSize: 32,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'SFB',
