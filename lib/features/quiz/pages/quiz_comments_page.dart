@@ -60,7 +60,7 @@ class _QuizCommentsPageState extends State<QuizCommentsPage> {
       resize: true,
       body: Column(
         children: [
-          CustomAppbar('${widget.quiz.comments.length} Comment'),
+          CustomAppbar('${widget.quiz.comments.length} Comments'),
           Expanded(
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -219,18 +219,18 @@ class _MessageField extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontFamily: 'SF',
                 ),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Message',
                   hintStyle: TextStyle(
-                    color: AppColors.border,
+                    color: AppColors.grey,
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'SF',
                   ),
-                  focusedBorder: const OutlineInputBorder(
+                  focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.transparent),
                   ),
-                  enabledBorder: const OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.transparent),
                   ),
                 ),

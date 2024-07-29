@@ -14,6 +14,7 @@ class QuestionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
         color: AppColors.card,
         borderRadius: BorderRadius.circular(10),
@@ -32,8 +33,8 @@ class QuestionCard extends StatelessWidget {
                   width: 32,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    image: const DecorationImage(
-                      image: AssetImage('assets/user1.png'),
+                    image: DecorationImage(
+                      image: AssetImage('assets/${quiz.asset}.png'),
                       fit: BoxFit.cover,
                     ),
                   ),

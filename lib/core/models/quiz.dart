@@ -74,10 +74,103 @@ List<Quiz> quizesListModel = [
   Quiz(
     id: 1,
     by: 'Emily Thompson',
-    asset: 'user1',
+    asset: 'user2',
     date: 'May 13, 2024',
     question:
         'What problems or inconveniences are you experiencing when using the current version of the application?',
+    comments: [],
+  ),
+  Quiz(
+    id: 2,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question: 'Which features do you find most useful in the app, and why?',
+    comments: [],
+  ),
+  Quiz(
+    id: 3,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question:
+        'Are there any features that you rarely or never use? Why do you find them unhelpful?',
+    comments: [],
+  ),
+  Quiz(
+    id: 4,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question:
+        'How easy is it to navigate through the app and find what you need?',
+    comments: [],
+  ),
+  Quiz(
+    id: 5,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question:
+        'Have you encountered any bugs or crashes while using the app? If so, please describe them.',
+    comments: [],
+  ),
+  Quiz(
+    id: 6,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question:
+        'How would you rate the overall performance of the app (e.g., speed, responsiveness)?',
+    comments: [],
+  ),
+  Quiz(
+    id: 7,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question: 'Are there any features or functionalities you wish the app had?',
+    comments: [],
+  ),
+  Quiz(
+    id: 8,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question: 'How satisfied are you with the app’s user interface and design?',
+    comments: [],
+  ),
+  Quiz(
+    id: 9,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question: 'Do you find the app’s notifications helpful or intrusive?',
+    comments: [],
+  ),
+  Quiz(
+    id: 10,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question: 'How often do you use the app, and for what primary purpose?',
+    comments: [],
+  ),
+  Quiz(
+    id: 11,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question: 'How likely are you to recommend this app to others, and why?',
+    comments: [],
+  ),
+  Quiz(
+    id: 12,
+    by: 'Ethan Mitchell',
+    asset: 'user1',
+    date: 'May 14, 2024',
+    question:
+        'What improvements would you suggest to enhance your experience with the app?',
     comments: [],
   ),
 ];
@@ -101,4 +194,30 @@ List<Comment> commentsListModel = [
         'The automatic expense categorization is incredibly useful for saving time.',
     current: false,
   ),
+  Comment(
+    quizID: 2,
+    by: 'Mia Harris',
+    asset: 'user3',
+    date: 'May 16, 2024',
+    title:
+        'I find the expense tracking feature most useful as it allows me to log my spending immediately and accurately.',
+    current: false,
+  ),
+  Comment(
+    quizID: 3,
+    by: 'Olivia Parker',
+    asset: 'user3',
+    date: 'May 17, 2024',
+    title: 'Aaa',
+    current: false,
+  ),
+  // Comment(
+  //   quizID: 2,
+  //   by: 'Olivia Parker',
+  //   asset: 'user3',
+  //   date: 'May 16, 2024',
+  //   title:
+  //       'The automatic expense categorization is incredibly useful for saving time.',
+  //   current: false,
+  // ),
 ];

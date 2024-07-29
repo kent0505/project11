@@ -35,7 +35,7 @@ class CommentCard extends StatelessWidget {
                     image: DecorationImage(
                       image: comment.current
                           ? FileImage(File(comment.asset))
-                          : AssetImage('assets/${comment.asset}.png'),
+                          : const AssetImage('assets/user.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),

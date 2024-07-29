@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/config/app_colors.dart';
+import '../../../core/models/quiz.dart';
 
 class QuizCard extends StatelessWidget {
   const QuizCard({super.key});
@@ -109,9 +110,17 @@ class QuizCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         left: 88,
-                        child: Text('10 questions'),
+                        top: 5,
+                        child: Text(
+                          '${quizesListModel.length} questions',
+                          style: const TextStyle(
+                            color: AppColors.yellow,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ],
                   ),

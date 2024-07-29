@@ -22,9 +22,3 @@ class AppColors {
   static Color grey2 = const Color(0xffA8A8AD).withOpacity(0.7);
   static Color grey3 = const Color(0xffA8A8AD).withOpacity(0.5);
 }
-
-// Primary Color: (#333333)
-// Accent Color: (#007BFF)
-// Income: (#28A745)
-// Expense: (#DC3545)
-// Text Color: (#333333) and (#6C757D)

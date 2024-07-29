@@ -13,7 +13,7 @@ import 'features/settings/bloc/settings_bloc.dart';
 
 void main() async {
   await Hive.initFlutter();
-  // await Hive.deleteBoxFromDisk('commentsbox');
+  await Hive.deleteBoxFromDisk('commentsbox');
   Hive.registerAdapter(OperationAdapter());
   Hive.registerAdapter(CommentAdapter());
   runApp(const MyApp());
