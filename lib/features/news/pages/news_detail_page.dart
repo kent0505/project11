@@ -32,10 +32,28 @@ class NewsDetailPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-
-                // date and read time
+                Row(
+                  children: [
+                    Text(
+                      news.ago,
+                      style: const TextStyle(
+                        color: AppColors.grey,
+                        fontSize: 13,
+                        fontFamily: 'SF',
+                      ),
+                    ),
+                    const Spacer(),
+                    Text(
+                      news.readTime,
+                      style: const TextStyle(
+                        color: AppColors.grey,
+                        fontSize: 13,
+                        fontFamily: 'SF',
+                      ),
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 16),
-
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: CachedNetworkImage(

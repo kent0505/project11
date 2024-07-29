@@ -46,13 +46,34 @@ class NewsCard extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Text(
-              news.time,
-              style: const TextStyle(
-                color: AppColors.grey,
-                fontSize: 11,
-                fontFamily: 'SF',
-              ),
+            Row(
+              children: [
+                Text(
+                  news.ago,
+                  style: const TextStyle(
+                    color: AppColors.grey,
+                    fontSize: 11,
+                    fontFamily: 'SF',
+                  ),
+                ),
+                Container(
+                  height: 3,
+                  width: 3,
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                  decoration: BoxDecoration(
+                    color: AppColors.grey,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                Text(
+                  news.readTime,
+                  style: const TextStyle(
+                    color: AppColors.grey,
+                    fontSize: 11,
+                    fontFamily: 'SF',
+                  ),
+                ),
+              ],
             ),
           ],
         ),
