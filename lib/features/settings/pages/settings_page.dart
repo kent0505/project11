@@ -67,7 +67,7 @@ class _UserName extends StatelessWidget {
         return Text(
           '$firstName $lastName',
           style: const TextStyle(
-            color: AppColors.black,
+            color: AppColors.text,
             fontSize: 21,
             fontWeight: FontWeight.w600,
             fontFamily: 'SFB',

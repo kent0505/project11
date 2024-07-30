@@ -34,7 +34,8 @@ class ProfileImage extends StatelessWidget {
                       File(path),
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
-                        return SvgPicture.asset('assets/profile_photo.svg');
+                        // return SvgPicture.asset('assets/profile_photo.svg');
+                        return Image.asset('assets/user.jpg');
                       },
                     ),
                   )

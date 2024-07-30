@@ -70,15 +70,6 @@ class CommentAdapter extends TypeAdapter<Comment> {
   }
 }
 
-// Ethan Mitchell
-// user1
-
-// Emily Thompson
-// user2
-
-// Sophia Lewis
-// user3
-
 List<Quiz> quizesListModel = [
   Quiz(
     id: 1,
@@ -214,115 +205,163 @@ List<Comment> commentsListModel = [
   ),
   Comment(
     quizID: 3,
-    by: 'Olivia Parker',
+    by: 'Alexander Scott',
     asset: 'user3',
     date: 'May 22, 2024',
-    title: 'Aaa',
+    title: 'Some users may not need to read news',
     current: false,
   ),
   Comment(
     quizID: 3,
-    by: 'Olivia Parker',
+    by: 'Mia Harris',
     asset: 'user3',
     date: 'May 23, 2024',
-    title: 'Aaa',
+    title:
+        'Users who are always connected to the internet may not see the value in offline access',
     current: false,
   ),
   Comment(
     quizID: 3,
-    by: 'Olivia Parker',
+    by: 'Daniel White',
     asset: 'user3',
     date: 'May 24, 2024',
-    title: 'Aaa',
+    title:
+        'Some users might be satisfied with the default design and not explore customization options.',
     current: false,
   ),
   Comment(
-    quizID: 3,
+    quizID: 4,
     by: 'Olivia Parker',
     asset: 'user3',
     date: 'May 25, 2024',
-    title: 'Aaa',
+    title:
+        'The search function is efficient and helps quickly locate transactions, categories, and reports.',
     current: false,
   ),
   Comment(
-    quizID: 3,
+    quizID: 4,
+    by: 'Jacob Ramirez',
+    asset: 'user3',
+    date: 'May 25, 2024',
+    title:
+        'The app has a well-organized structure with clear menus and labels, making it simple to find specific features.',
+    current: false,
+  ),
+  Comment(
+    quizID: 5,
     by: 'Olivia Parker',
     asset: 'user3',
     date: 'May 25, 2024',
-    title: 'Aaa',
+    title:
+        'Sometimes, the app freezes or becomes unresponsive when switching between different screens too quickly.',
     current: false,
   ),
   Comment(
-    quizID: 3,
-    by: 'Olivia Parker',
-    asset: 'user3',
-    date: 'May 25, 2024',
-    title: 'Aaa',
-    current: false,
-  ),
-  Comment(
-    quizID: 3,
-    by: 'Olivia Parker',
+    quizID: 6,
+    by: 'Jacob Ramirez',
     asset: 'user3',
     date: 'May 26, 2024',
-    title: 'Aaa',
+    title:
+        'The app loads quickly, and navigating between screens is smooth and seamless.',
     current: false,
   ),
   Comment(
-    quizID: 3,
-    by: 'Olivia Parker',
+    quizID: 7,
+    by: 'Mia Harris',
     asset: 'user3',
     date: 'May 27, 2024',
-    title: 'Aaa',
+    title:
+        'Integration for tracking investments, stocks, and other assets alongside regular expenses and incomes.',
     current: false,
   ),
   Comment(
-    quizID: 3,
-    by: 'Olivia Parker',
+    quizID: 7,
+    by: 'James Walker',
     asset: 'user3',
     date: 'May 28, 2024',
-    title: 'Aaa',
+    title:
+        'A feature to split expenses among multiple users or categories, useful for shared bills or group activities.',
     current: false,
   ),
   Comment(
-    quizID: 3,
+    quizID: 8,
+    by: 'Michael Edwards',
+    asset: 'user3',
+    date: 'May 29, 2024',
+    title:
+        'The user interface is minimalistic, reducing clutter and focusing on essential information.',
+    current: false,
+  ),
+  Comment(
+    quizID: 8,
     by: 'Olivia Parker',
     asset: 'user3',
     date: 'May 29, 2024',
-    title: 'Aaa',
+    title:
+        'The design elements, such as spacing and alignment, are well-executed, contributing to a polished look and feel.',
     current: false,
   ),
   Comment(
-    quizID: 3,
-    by: 'Olivia Parker',
-    asset: 'user3',
-    date: 'May 29, 2024',
-    title: 'Aaa',
-    current: false,
-  ),
-  Comment(
-    quizID: 3,
-    by: 'Olivia Parker',
+    quizID: 9,
+    by: 'Daniel White',
     asset: 'user3',
     date: 'May 30, 2024',
-    title: 'Aaa',
+    title:
+        'Reminders for updating financial goals and budgets are useful for keeping my financial planning on track.',
     current: false,
   ),
   Comment(
-    quizID: 3,
+    quizID: 9,
+    by: 'Mia Harris',
+    asset: 'user3',
+    date: 'May 31, 2024',
+    title:
+        'The notifications for upcoming bills help me stay on top of my payments and avoid late fees.',
+    current: false,
+  ),
+  Comment(
+    quizID: 10,
+    by: 'Mia Harris',
+    asset: 'user3',
+    date: 'May 31, 2024',
+    title:
+        'To check and compare daily expenses against the highest income value for better financial insights.',
+    current: false,
+  ),
+  Comment(
+    quizID: 10,
     by: 'Olivia Parker',
     asset: 'user3',
     date: 'May 31, 2024',
-    title: 'Aaa',
+    title:
+        'To update financial goals and categories, making sure the app reflects any changes in financial plans or priorities.',
     current: false,
   ),
-  // Comment(
-  //   quizID: 2,
-  //   by: 'Olivia Parker',
-  //   asset: 'user3',
-  //   date: 'May 16, 2024',
-  //   title:
-  //       'The automatic expense categorization is incredibly useful for saving time.',
-  //   current: false,
-  // ),
+  Comment(
+    quizID: 11,
+    by: 'Sophia Lewis',
+    asset: 'user3',
+    date: 'May 31, 2024',
+    title:
+        'The budgeting tools are effective in helping users set and achieve financial goals.',
+    current: false,
+  ),
+  Comment(
+    quizID: 11,
+    by: 'Daniel White',
+    asset: 'user3',
+    date: 'May 31, 2024',
+    title:
+        'The app provides a seamless and intuitive user experience, making it easy to track expenses and incomes.',
+    current: false,
+  ),
+  Comment(
+    quizID: 12,
+    by: 'Olivia Parker',
+    asset: 'user3',
+    date: 'May 31, 2024',
+    title:
+        'Implement a clean, modern, and intuitive user interface that is easy to navigate, with clear visual hierarchies and user-friendly icons and buttons.',
+    current: false,
+  ),
 ];

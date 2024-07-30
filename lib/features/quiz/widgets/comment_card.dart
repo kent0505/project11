@@ -33,7 +33,7 @@ class CommentCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
                     image: DecorationImage(
-                      image: comment.current
+                      image: comment.current && comment.asset.isNotEmpty
                           ? FileImage(File(comment.asset))
                           : const AssetImage('assets/user.jpg'),
                       fit: BoxFit.cover,
