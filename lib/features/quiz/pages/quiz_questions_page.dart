@@ -54,6 +54,7 @@ class QuizQuestionsPage extends StatelessWidget {
                         return QuestionCard(quiz: quizesListModel[index]);
                       },
                     ),
+                    const SizedBox(height: 8),
                   ],
                 ),
               );
